@@ -1,0 +1,13 @@
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+
+
+class Hi(BaseModel):
+    Hello: str
+
+
+@app.get("/", response_model=Hi)
+def index(name: str = "World") -> dict[str, str]:
+    return {"Hello": name}
