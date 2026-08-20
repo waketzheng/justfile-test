@@ -14,6 +14,8 @@ license = {text = "MIT"}
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
+[tool.pdm.version]
+path = "src/src_project/__init__.py"
 
 [tool.pdm]
 distribution = true

@@ -23,6 +23,9 @@ package = false
 [tool.pdm]
 distribution = false
 
+[tool.pdm.version]
+path = "app/__init__.py"
+
 [dependency-groups]
 dev = [
     "asynctor[testing]>=0.14.0",

@@ -16,3 +16,6 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
+
+[tool.pdm.version]
+path = "my_project/__init__.py"
