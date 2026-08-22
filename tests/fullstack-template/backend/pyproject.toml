@@ -1,10 +1,8 @@
 [project]
-name = "src-project"
+name = "fullstack-tempalte"
 dynamic = ["version"]
 description = "Default template for PDM package"
-authors = [
-    {name = "Waket Zheng",email = "waketzheng@gmail.com"},
-]
+authors = []
 dependencies = []
 requires-python = ">=3.10"
 readme = "README.md"
@@ -15,12 +13,10 @@ requires = ["pdm-backend"]
 build-backend = "pdm.backend"
 
 [tool.pdm.version]
-path = "src/src_project/__init__.py"
+path = "app/__init__.py"
 
-[dependency-groups]
-dev = [
-    "pytest>=9.1.1",
-]
+[tool.uv]
+package = false
 
 [tool.pdm]
-distribution = true
+distribution = false

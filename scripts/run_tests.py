@@ -8,6 +8,7 @@ BASE_DIR = Path(__file__).parent.resolve().parent
 
 def _run_test(d: Path) -> None:
     print(f"--> cd {d.relative_to(BASE_DIR)}")
+    # Use `chdir` so that this script can be executed anywhere.
     with chdir(d):
         rc = Shell("pytest").call(verbose=True)
         if rc != 0:
@@ -16,8 +17,8 @@ def _run_test(d: Path) -> None:
 
 def main() -> None:
     test_dir = BASE_DIR / "tests"
-    for d in test_dir.glob("*"):
-        if d.is_dir():
+    for d in test_dir.iterdir():
+        if d.is_dir() and any(d.glob("test*")):
             _run_test(d)
 
 
